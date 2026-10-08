@@ -8,7 +8,8 @@ export const App = () => {
    // View ----------  
   return (
     <View style={styles.container}>
-      <Text>Hello, World!</Text>
+      <Text>Hello, World!!</Text>
+      <Text>Welcome to React Native</Text>
       <StatusBar style="auto" />
     </View>
   );
