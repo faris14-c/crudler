@@ -1,0 +1,20 @@
+import Screen from '../layout/Screen';
+import { StyleSheet, Text } from 'react-native';
+
+const ModuleAddScreen = () => {
+   // Initialisations -------------
+   // State ----------
+   // Handlers ----------
+   // View ----------  
+  return (
+    <Screen>
+      <Text>Add</Text>
+    </Screen>
+  );
+};
+
+const styles = StyleSheet.create({});
+
+export default ModuleAddScreen;
+
+S
