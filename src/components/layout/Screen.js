@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 const Screen = ({children}) => {
    // Initialisations -------------
    // State ----------
-   // Handlers ----------SS
+   // Handlers ----------
    // View ----------  
   return (
     <View style={styles.screen}>
@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 16,
   },
 });
 
