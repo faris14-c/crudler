@@ -153,39 +153,8 @@ const modules = [
     "ModuleLeaderName": "Graeme Jones",
     "ModuleYearName": "2022-23"
   },
-  {
-    "ModuleID": 15,
-    "ModuleName": "Statistics in Practice",
-    "ModuleCode": "MA5100",
-    "ModuleLevel": 5,
-    "ModuleYearID": null,
-    "ModuleLeaderID": null,
-    "ModuleImageURL": "https://assets.codepen.io/2510825/courseImageStatisticsInPractice.png",
-    "ModuleLeaderName": null,
-    "ModuleYearName": null
-  },
-  {
-    "ModuleID": 16,
-    "ModuleName": "Practical Data Analyst Skills",
-    "ModuleCode": "MA6340",
-    "ModuleLevel": 6,
-    "ModuleYearID": 1,
-    "ModuleLeaderID": 820,
-    "ModuleImageURL": "https://assets.codepen.io/2510825/courseImagePracticalDataAnalystSkills.png",
-    "ModuleLeaderName": "Graeme Jones",
-    "ModuleYearName": "2022-23"
-  },
-  {
-    "ModuleID": 209,
-    "ModuleName": "Test module ",
-    "ModuleCode": "Tm1234",
-    "ModuleLevel": 3,
-    "ModuleYearID": 2,
-    "ModuleLeaderID": 820,
-    "ModuleImageURL": "https://assets.codepen.io/2510825/courseImageMobileApplicationDevelopment.jpg",
-    "ModuleLeaderName": "Graeme Jones",
-    "ModuleYearName": "2023-24"
-  }
+ 
+  
 ];
 
 export default modules;

@@ -1,45 +1,54 @@
 import Screen from '../layout/Screen';
-import { StyleSheet, ScrollView, Text, View, Pressable } from 'react-native';
+import { LogBox, StyleSheet, Text } from 'react-native';
+import ModuleList from '../entity/modules/ModuleList.js';
+import { useState } from 'react';
+import RenderCount from '../UI/renderCount.js';
+import { Button, ButtonTray } from '../UI/Button.js';
 
 import initialModules from '../../data/modules.js';
 
-const ModuleListScreen = () => {
-  const modules = initialModules;
+const ModuleListScreen = ({navigation}) => {
+  // Initialisations -------------
+  LogBox.ignoreLogs(['Non-serializable values were found in the navigation state']);
+  // State ----------
+  const [modules, setModules] = useState(initialModules);
 
-  //Handlers ----------
-  const handleSelect = () => alert("item selected");
+  // Handlers ------------------------------
+const handleDelete = (module) =>
+  setModules(modules.filter((item) => item.ModuleID !== module.ModuleID));
 
+const onDelete = (module) => {
+  handleDelete(module);
+  navigation.goBack();
+};
+
+const gotoViewScreen = (module) =>
+  navigation.navigate('ModuleViewScreen', { module, onDelete });
+
+const handleAdd = (module) => setModules([...modules, module]);
+
+const onAdd = (module) => {
+  handleAdd(module);
+  navigation.goBack();
+};
+
+const gotoAddScreen = () => navigation.navigate('ModuleAddScreen', { onAdd });
+   
+  // View ----------
   return (
     <Screen>
-      <ScrollView style={styles.container}>
-        {modules.map((module) => {
-          return(
-            <Pressable key={module.ModuleCode} onPress={handleSelect}>
-
-          <View style={styles.item}>
-            <Text style={styles.text}>
-              {module.ModuleCode} {module.ModuleName}
-            </Text>
-          </View>
-          </Pressable>
-        );
-        })}
-      </ScrollView>
+      <ButtonTray>
+        <Button label="Add" icon={<Text>➕</Text>} onClick={gotoAddScreen} />
+      </ButtonTray>
+      <RenderCount />
+      <ModuleList modules={modules} onSelect={gotoViewScreen} />
     </Screen>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {},
-  item: {
-    paddingVertical: 15,
-    borderTopWidth: 1,
-    borderColor: 'lightgray',
-  },
-  text: {
-    fontSize: 16,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default ModuleListScreen;
+
+
 

@@ -1,19 +1,24 @@
 import Screen from '../layout/Screen';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import ModuleView from '../entity/modules/ModuleView.js';
 
-const ModuleModifyScreen = () => {
+
+const ModuleModifyScreen = ({navigate, route}) => {
    // Initialisations -------------
+   const { module, onDelete } = route.params;
+
    // State ----------
    // Handlers ----------
    // View ----------  
   return (
     <Screen>
-      <Text>Modify</Text>
+     <ModuleView module={module} onDelete={onDelete} />
     </Screen>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+});
 
 export default ModuleModifyScreen;
 
